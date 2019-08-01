@@ -1755,7 +1755,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #74f467;
+  background: #401b5d;
 }
 .feed-link,
 .chat {
@@ -2891,6 +2891,10 @@ ul.breadcrumb li+li:last-child {
 .post-body h3 {
   border-bottom: 1px dotted #eee;
 }
+.post-body img {
+  padding: initial !important;
+  max-width: 50% !important;
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
     padding: 10px;
@@ -2900,6 +2904,10 @@ ul.breadcrumb li+li:last-child {
   }
   .posts-expand .post-button {
     margin-top: 20px;
+  }
+  .posts-expand img {
+    padding: initial !important;
+    max-width: 50% !important;
   }
   .post-block {
     padding: 20px;
@@ -2929,6 +2937,7 @@ ul.breadcrumb li+li:last-child {
   }
   .posts-expand img {
     padding: initial !important;
+    max-width: 50% !important;
   }
   .post-block {
     padding: 12px;
@@ -2946,7 +2955,4 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
-}
-.main img {
-  max-width: 50%;
 }
