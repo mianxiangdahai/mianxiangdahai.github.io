@@ -1755,7 +1755,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #401b5d;
+  background: #ffffe3;
 }
 .feed-link,
 .chat {
@@ -2423,7 +2423,7 @@ ul.breadcrumb li+li:last-child {
   width: 240px;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-  border-radius: 16px;
+  border-radius: 3px;
 }
 @media (min-width: 1200px) {
   .container .header-inner {
@@ -2458,7 +2458,7 @@ ul.breadcrumb li+li:last-child {
   background: #fff;
   min-height: 700px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-  border-radius: 16px;
+  border-radius: 3px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
@@ -2684,7 +2684,7 @@ ul.breadcrumb li+li:last-child {
   color: #555;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  border-radius: 16px;
+  border-radius: 3px;
   opacity: 0;
 }
 .sidebar-inner.affix {
@@ -2812,12 +2812,12 @@ ul.breadcrumb li+li:last-child {
   padding: 40px;
   background: #faf9de;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-  border-radius: 16px;
+  border-radius: 3px;
 }
 #posts > article + article .post-block {
   margin-top: 12px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  border-radius: 16px;
+  border-radius: 3px;
 }
 .comments {
   padding: 40px;
@@ -2825,7 +2825,7 @@ ul.breadcrumb li+li:last-child {
   margin-top: 12px;
   background: #c7edcc;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  border-radius: 16px;
+  border-radius: 3px;
 }
 .posts-expand {
   padding-top: initial;
@@ -2844,7 +2844,7 @@ ul.breadcrumb li+li:last-child {
   border-top: initial;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  border-radius: 16px;
+  border-radius: 3px;
   padding: 10px 0 10px;
 }
 .pagination .prev,
@@ -2892,7 +2892,7 @@ ul.breadcrumb li+li:last-child {
   border-bottom: 1px dotted #eee;
 }
 .post-body img {
-  padding: initial !important;
+  padding: 5px !important;
   max-width: 50% !important;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2906,13 +2906,13 @@ ul.breadcrumb li+li:last-child {
     margin-top: 20px;
   }
   .posts-expand img {
-    padding: initial !important;
+    padding: 5px !important;
     max-width: 50% !important;
   }
   .post-block {
     padding: 20px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-    border-radius: 16px;
+    border-radius: 3px;
   }
   #posts > article + article .post-block {
     margin-top: 10px;
@@ -2936,14 +2936,14 @@ ul.breadcrumb li+li:last-child {
     margin: 12px 0px;
   }
   .posts-expand img {
-    padding: initial !important;
-    max-width: 50% !important;
+    padding: 6px !important;
+    max-width: 80% !important;
   }
   .post-block {
     padding: 12px;
     min-height: auto;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-    border-radius: 16px;
+    border-radius: 3px;
   }
   #posts > article + article .post-block {
     margin-top: 8px;
