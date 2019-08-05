@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Vue项目真机调试</title>
+      <link href="/2019/08/05/%E5%89%8D%E7%AB%AF/Vue/Vue%E9%A1%B9%E7%9B%AE%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
+      <url>/2019/08/05/%E5%89%8D%E7%AB%AF/Vue/Vue%E9%A1%B9%E7%9B%AE%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Vue&#x9879;&#x76EE;&#x771F;&#x673A;&#x8C03;&#x8BD5;"><a href="#Vue&#x9879;&#x76EE;&#x771F;&#x673A;&#x8C03;&#x8BD5;" class="headerlink" title="Vue&#x9879;&#x76EE;&#x771F;&#x673A;&#x8C03;&#x8BD5;"></a>Vue&#x9879;&#x76EE;&#x771F;&#x673A;&#x8C03;&#x8BD5;</h2><p>&#x5728;&#x771F;&#x673A;&#x8C03;&#x8BD5;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;,&#x53D1;&#x73B0;&#x8F93;&#x5165;&#x672C;&#x673A;ipv4&#x5730;&#x5740;,&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x9879;&#x76EE;,</p><p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:   &#x5728; package.json&#x6587;&#x4EF6;&#x4E2D;&#x7684; &#x201C;scripts&#x201D;&#x2013;&gt;&#x201D;dev&#x201D; &#x7684;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x503C;&#x4E2D;&#x52A0;&#x5165; </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-- host 0.0.0.0</span><br></pre></td></tr></table></figure><p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;,&#x91CD;&#x542F;Vue&#x9879;&#x76EE;&#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;,&#x4F46;&#x662F;,&#x7531;&#x4E8E;&#x6211;&#x7684;&#x7535;&#x8111;&#x7279;&#x6B8A;,&#x7ECF;&#x8FC7;&#x4E0A;&#x8FF0;&#x6539;&#x52A8;&#x4EE5;&#x540E;,&#x5728;&#x7535;&#x8111;&#x5730;&#x5740;&#x680F;&#x91CC;&#x9762;&#x8F93;&#x5165;&#x672C;&#x673A;ipv4&#x5730;&#x5740;,&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x9879;&#x76EE;,&#x4F46;&#x662F;,&#x624B;&#x673A;&#x4E0A;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x4E5F;&#x4E0D;&#x884C;,&#x7ECF;&#x8FC7;&#x5206;&#x6790;,&#x89C9;&#x5F97;&#x53EF;&#x80FD;&#x662F;&#x65E0;&#x7EBF;&#x8DEF;&#x7531;&#x5668;&#x7684;ip&#x9694;&#x79BB;,&#x6216;&#x8005;&#x662F;&#x672C;&#x673A;&#x9632;&#x706B;&#x5899;&#x9020;&#x6210;&#x7684;.</p><p>&#x7ECF;&#x67E5;&#x770B;,&#x672C;&#x673A;ip&#x4E0E;&#x624B;&#x673A;ip,&#x5728;&#x540C;&#x4E00;&#x7F51;&#x6BB5;,&#x6240;&#x4EE5;&#x6392;&#x9664;&#x4E86;&#x4E0A;&#x8FF0;&#x7B2C;&#x4E00;&#x79CD;&#x53EF;&#x80FD;,&#x7136;&#x540E;,&#x5173;&#x95ED;&#x7535;&#x8111;windows defender&#x9632;&#x706B;&#x5899;,&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x9879;&#x76EE;,&#x95EE;&#x9898;&#x89E3;&#x51B3;,&#x624B;&#x673A;&#x4E0A;&#x8BBF;&#x95EE;&#x6CA1;&#x95EE;&#x9898;&#x4E86;.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>漩涡鸣人</title>
       <link href="/2019/08/01/%E5%8A%A8%E6%BC%AB/%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85/%E6%BC%A9%E6%B6%A1%E9%B8%A3%E4%BA%BA/"/>
       <url>/2019/08/01/%E5%8A%A8%E6%BC%AB/%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85/%E6%BC%A9%E6%B6%A1%E9%B8%A3%E4%BA%BA/</url>
