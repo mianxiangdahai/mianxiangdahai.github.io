@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2">
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="&amp;#x5BF9;&amp;#x4E8E;&amp;#x5F39;&amp;#x6027;&amp;#x4F38;&amp;#x7F29;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x7406;&amp;#x89E3;&amp;#x4E0E;&amp;#x4F7F;&amp;#x7528;&amp;#x7ED9;&amp;#x5916;&amp;#x9762;&amp;#x7236;&amp;#x7EA7;&amp;#x5143;&amp;#x7D20;&amp;#x8BBE;&amp;#x7F6E;&amp;#x7684;&amp;#x5C5E;">
+<meta name="keywords" content="前端, PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="弹性伸缩布局">
+<meta property="og:url" content="http://885306363@qq.com/2019/08/27/前端/CSS/弹性伸缩布局/index/index.html">
+<meta property="og:site_name" content="面向大海的博客">
+<meta property="og:description" content="&amp;#x5BF9;&amp;#x4E8E;&amp;#x5F39;&amp;#x6027;&amp;#x4F38;&amp;#x7F29;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x7406;&amp;#x89E3;&amp;#x4E0E;&amp;#x4F7F;&amp;#x7528;&amp;#x7ED9;&amp;#x5916;&amp;#x9762;&amp;#x7236;&amp;#x7EA7;&amp;#x5143;&amp;#x7D20;&amp;#x8BBE;&amp;#x7F6E;&amp;#x7684;&amp;#x5C5E;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://885306363@qq.com/2019/08/27/前端/CSS/弹性伸缩布局/index/content-1.png">
+<meta property="og:image" content="http://885306363@qq.com/2019/08/27/前端/CSS/弹性伸缩布局/index/content-2.png">
+<meta property="og:updated_time" content="2019-08-28T06:43:13.550Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="弹性伸缩布局">
+<meta name="twitter:description" content="&amp;#x5BF9;&amp;#x4E8E;&amp;#x5F39;&amp;#x6027;&amp;#x4F38;&amp;#x7F29;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x7406;&amp;#x89E3;&amp;#x4E0E;&amp;#x4F7F;&amp;#x7528;&amp;#x7ED9;&amp;#x5916;&amp;#x9762;&amp;#x7236;&amp;#x7EA7;&amp;#x5143;&amp;#x7D20;&amp;#x8BBE;&amp;#x7F6E;&amp;#x7684;&amp;#x5C5E;">
+<meta name="twitter:image" content="http://885306363@qq.com/2019/08/27/前端/CSS/弹性伸缩布局/index/content-1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://885306363@qq.com/2019/08/27/前端/CSS/弹性伸缩布局/index/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>弹性伸缩布局 | 面向大海的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+  <!-- 爆炸效果 -->
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+  <script type="text/javascript" src="/js/firework.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">面向大海的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/mianxiangdahai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://885306363@qq.com/2019/08/27/前端/CSS/弹性伸缩布局/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="面向大海">
+      <meta itemprop="description" content="不忘初心,方得始终。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="面向大海的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">弹性伸缩布局
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-27 08:05:01" itemprop="dateCreated datePublished" datetime="2019-08-27T08:05:01+08:00">2019-08-27</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-28 14:43:13" itemprop="dateModified" datetime="2019-08-28T14:43:13+08:00">2019-08-28</time>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="fa fa-comment-o"></i>
+    </span>
+    
+      <span class="post-meta-item-text">评论数：</span>
+    
+  
+    <a href="/2019/08/27/前端/CSS/弹性伸缩布局/index/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/08/27/前端/CSS/弹性伸缩布局/index/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">2.6k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">2 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="&#x5BF9;&#x4E8E;&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;&#x7684;&#x7406;&#x89E3;&#x4E0E;&#x4F7F;&#x7528;"><a href="#&#x5BF9;&#x4E8E;&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;&#x7684;&#x7406;&#x89E3;&#x4E0E;&#x4F7F;&#x7528;" class="headerlink" title="&#x5BF9;&#x4E8E;&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;&#x7684;&#x7406;&#x89E3;&#x4E0E;&#x4F7F;&#x7528;"></a>&#x5BF9;&#x4E8E;&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;&#x7684;&#x7406;&#x89E3;&#x4E0E;&#x4F7F;&#x7528;</h3><h4 id="&#x7ED9;&#x5916;&#x9762;&#x7236;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;"><a href="#&#x7ED9;&#x5916;&#x9762;&#x7236;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;" class="headerlink" title="&#x7ED9;&#x5916;&#x9762;&#x7236;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;"></a>&#x7ED9;&#x5916;&#x9762;&#x7236;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;</h4><p>&#x9996;&#x5148;&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E3A;&#x5BB9;&#x5668;,&#x7ED9;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x7684;CSS&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:flex</span>;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;,&#x5728;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x4E4B;&#x5185;&#x7684;&#x8FD9;&#x4E00;&#x5757;&#x533A;&#x57DF;,&#x5DF2;&#x7ECF;&#x4E0D;&#x540C;&#x4E8E;&#x5176;&#x4ED6;&#x533A;&#x57DF;&#x4E86;,&#x8FD9;&#x4E00;&#x5757;&#x533A;&#x57DF;,&#x662F;&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;&#x7684;&#x533A;&#x57DF;,&#x5E76;&#x975E;&#x4F20;&#x7EDF;&#x7684;&#x6587;&#x6863;&#x6D41;&#x533A;&#x57DF;,</p>
+<p>&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5728;&#x8FD9;&#x4E2A;&#x533A;&#x57DF;&#x5185;&#x7684;&#x5143;&#x7D20;&#x4E3A;&#x6A2A;&#x5411;&#x6392;&#x5217;,&#x8FD8;&#x662F;&#x7EB5;&#x5411;&#x6392;&#x5217;,&#x5206;&#x522B;&#x662F;:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">flex-direction</span><span class="selector-pseudo">:row</span>;</span><br><span class="line">// &#x6A2A;&#x5411;</span><br><span class="line"><span class="selector-tag">flex</span><span class="selector-pseudo">:direction</span><span class="selector-pseudo">:column</span>;</span><br><span class="line">// &#x7EB5;&#x5411;</span><br></pre></td></tr></table></figure>
+
+<p>&#x6307;&#x5B9A;&#x5185;&#x90E8;&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x548C;&#x719F;&#x77E5;&#x5C45;&#x4E2D;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">justify-content</span><span class="selector-pseudo">:center</span>;</span><br><span class="line">// &#x7AD6;&#x76F4;&#x5C45;&#x4E2D;</span><br><span class="line"><span class="selector-tag">alignitems</span><span class="selector-pseudo">:center</span>;</span><br><span class="line">// &#x6C34;&#x5E73;&#x5C45;&#x4E2D;</span><br></pre></td></tr></table></figure>
+
+<h5 id="&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;"><a href="#&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;" class="headerlink" title="&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;"></a>&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.box</span>{</span></span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 500px;</span><br><span class="line">      background-color: orange;</span><br><span class="line">      display: flex;</span><br><span class="line">      flex-direction: column;</span><br><span class="line"><span class="css">      <span class="selector-tag">justify-content</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">      <span class="selector-tag">align-items</span><span class="selector-pseudo">:center</span>;  </span></span><br><span class="line">    }</span><br><span class="line"><span class="css">    <span class="selector-class">.box</span> <span class="selector-tag">div</span>{</span></span><br><span class="line">      width: 90px;</span><br><span class="line">      height: 90px;</span><br><span class="line">      background-color: red;</span><br><span class="line"><span class="css">      <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line">    }</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item1&quot;</span>&gt;</span>item1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item2&quot;</span>&gt;</span>item2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item3&quot;</span>&gt;</span>item3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item4&quot;</span>&gt;</span>item4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item5&quot;</span>&gt;</span>item5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/08/27/&#x524D;&#x7AEF;/CSS/&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;/index/content-1.png" alt></p>
+<h4 id="&#x7ED9;&#x5185;&#x90E8;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;"><a href="#&#x7ED9;&#x5185;&#x90E8;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;" class="headerlink" title="&#x7ED9;&#x5185;&#x90E8;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;"></a>&#x7ED9;&#x5185;&#x90E8;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;</h4><p>&#x6839;&#x636E;flex&#x503C;&#x7684;&#x591A;&#x5C11;&#x786E;&#x5B9A;,&#x8BE5;&#x5B50;&#x5143;&#x7D20;&#x5728;&#x56FA;&#x5B9A;&#x65B9;&#x5411;&#x4E0A;&#x6392;&#x5217;&#x6240;&#x5360;&#x7684;&#x4EFD;&#x6570;&#x5927;&#x5C0F;</p>
+<p>&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;flex&#x503C;&#x7684;&#x603B;&#x548C;&#x503C;&#x4F5C;&#x4E3A;&#x5206;&#x6BCD;,&#x6BCF;&#x4E2A;&#x5143;&#x7D20;flex&#x503C;&#x4F5C;&#x4E3A;&#x5206;&#x5B50;,&#x8FD9;&#x4E2A;&#x5206;&#x6570;&#x503C;&#x51B3;&#x5B9A;&#x6BD4;&#x91CD;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex:1;</span><br></pre></td></tr></table></figure>
+
+<h5 id="&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;-1"><a href="#&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;-1" class="headerlink" title="&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;"></a>&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x679C;</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">  &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .box{</span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 500px;</span><br><span class="line">      background-color: orange;</span><br><span class="line">      display: flex;</span><br><span class="line">      flex-direction: column;</span><br><span class="line">      justify-content: center;</span><br><span class="line">      align-items: center</span><br><span class="line">    }</span><br><span class="line">    .box div{</span><br><span class="line">      width: 90px;</span><br><span class="line">      height: 90px;</span><br><span class="line">      background-color: purple;</span><br><span class="line">      border: 1px solid #ccc;</span><br><span class="line">    }</span><br><span class="line">    .box .item1{</span><br><span class="line">      flex:1;</span><br><span class="line">    }</span><br><span class="line">    .box .item2{</span><br><span class="line">      flex:2;</span><br><span class="line">    }</span><br><span class="line">    .box .item3{</span><br><span class="line">      flex:3;</span><br><span class="line">    }</span><br><span class="line">    .box .item4{</span><br><span class="line">      flex:4;</span><br><span class="line">    }</span><br><span class="line">    .box .item5{</span><br><span class="line">      flex:5;</span><br><span class="line">    }</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;item1&quot;&gt;item1&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item2&quot;&gt;item2&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item3&quot;&gt;item3&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item4&quot;&gt;item4&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item5&quot;&gt;item5&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/08/27/&#x524D;&#x7AEF;/CSS/&#x5F39;&#x6027;&#x4F38;&#x7F29;&#x5E03;&#x5C40;/index/content-2.png" alt></p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/14/前端/JavaScript/JS中字符串常用方法/index/" rel="next" title="JS中字符串常用方法">
+                <i class="fa fa-chevron-left"></i> JS中字符串常用方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+    
+    <div class="comments" id="comments"></div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="面向大海">
+  
+  <p class="site-author-name" itemprop="name">面向大海</p>
+  <div class="site-description motion-element" itemprop="description">不忘初心,方得始终。</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/mianxiangdahai" title="GitHub &rarr; https://github.com/mianxiangdahai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="/885306363@qq.com" title="E-Mail &rarr; 885306363@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4990425&auto=1&height=66"></iframe>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对于弹性伸缩布局的理解与使用"><span class="nav-number">1.</span> <span class="nav-text">对于弹性伸缩布局的理解与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#给外面父级元素设置的属性"><span class="nav-number">1.1.</span> <span class="nav-text">给外面父级元素设置的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码和结果"><span class="nav-number">1.1.1.</span> <span class="nav-text">代码和结果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给内部元素设置的属性"><span class="nav-number">1.2.</span> <span class="nav-text">给内部元素设置的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码和结果-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">代码和结果</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">面向大海</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">17k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">16 分钟</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+    
+    
+  
+  <script color="255,51,51" opacity="0.5" zindex="-1" count="120" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+  
+  
+  <script size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
+
+
+
+
+
+  
+    
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'bT5ceqIugoKNtWqEXY0MTnIq-gzGzoHsz',
+    appKey: '876ASphJSGRHIoCYDtQxloiU',
+    placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>
