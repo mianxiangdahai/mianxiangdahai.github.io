@@ -20,7 +20,7 @@ hr {
 }
 pre {
   font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: 1.2em; /* 2 */
 }
 a {
   background-color: transparent;
@@ -464,7 +464,6 @@ body {
 pre,
 .highlight {
   margin: 20px 0;
-  font-size: 14px;
   color: #c5c8c6;
   background: #1d1f21;
   line-height: 1.6;
@@ -478,6 +477,7 @@ code {
   word-wrap: break-word;
   padding: 8px;
   color: #555;
+  font-size: 1.2em;
   background: #66f8d1;
   border-radius: 8px;
 }
@@ -1754,7 +1754,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #52e3aa;
+  background: #d5ffff;
 }
 .feed-link,
 .chat {
