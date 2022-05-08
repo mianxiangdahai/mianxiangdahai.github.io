@@ -301,9 +301,8 @@ td {
   border-bottom-width: 1px;
 }
 .btn {
-  background: var(--btn-default-bg);
   border: 2px solid var(--btn-default-border-color);
-  border-radius: 2px;
+  border-radius: 6px;
   color: var(--btn-default-color);
   display: inline-block;
   font-size: 0.875em;
@@ -1909,7 +1908,7 @@ pre code {
 .post-body video,
 .post-body embed {
   margin-bottom: 20px;
-  border: 1px solid #010101;
+  border: 2px solid #555;
   border-radius: 6px;
 }
 .post-body .video-container {
