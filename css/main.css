@@ -1910,8 +1910,9 @@ pre code {
 .post-body video,
 .post-body embed {
   margin-bottom: 20px;
-  border: 2px solid #555;
+  border: 1px solid #555;
   border-radius: 6px;
+  box-sizing: border-box;
 }
 .post-body .video-container {
   height: 0;
