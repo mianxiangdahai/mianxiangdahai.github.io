@@ -196,6 +196,32 @@
       </categories>
   </entry>
   <entry>
+    <title>border与outline的区别</title>
+    <url>/2022/05/07/%E5%89%8D%E7%AB%AF/CSS/border%E4%B8%8Eoutline%E7%9A%84%E5%8C%BA%E5%88%AB/index/</url>
+    <content><![CDATA[<h3 id="border与outline的区别"><a href="#border与outline的区别" class="headerlink" title="border与outline的区别"></a>border与outline的区别</h3><ol>
+<li>outline不占空间,不会影响元素的尺寸和位置—border占空间,影响元素的尺寸和位置</li>
+<li>outline属性针对链接,表单控件等元素设计,而border则可以作用于几乎所有有形的html元素</li>
+</ol>
+<p><code>所以outline的效果将随图片的focus事件而出现,元素的blur事件而消失,这两种效果都是浏览器的默认行为,无需JavaScript配合CSS实现</code></p>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><ul>
+<li>以下是设置border的div的效果</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#box</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">600px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">230px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: black;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.item</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border</span>: <span class="number">3px</span> solid red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/05/07/%E5%89%8D%E7%AB%AF/CSS/border%E4%B8%8Eoutline%E7%9A%84%E5%8C%BA%E5%88%AB/index/content-1.png"></p>
+<ul>
+<li>以下是设置outline的div的效果</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#box</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">600px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">230px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: black;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.item</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">outline</span>: <span class="number">3px</span> solid red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/05/07/%E5%89%8D%E7%AB%AF/CSS/border%E4%B8%8Eoutline%E7%9A%84%E5%8C%BA%E5%88%AB/index/content-2.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>flexbox布局中flex项文本溢出设置显示省略号失效问题</title>
     <url>/2019/08/06/%E5%89%8D%E7%AB%AF/CSS/flexbox%E5%B8%83%E5%B1%80%E4%B8%ADflex%E9%A1%B9%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E8%AE%BE%E7%BD%AE%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/index/</url>
     <content><![CDATA[<h2 id="flexbox布局中flex项文本溢出设置显示省略号失效问题"><a href="#flexbox布局中flex项文本溢出设置显示省略号失效问题" class="headerlink" title="flexbox布局中flex项文本溢出设置显示省略号失效问题"></a>flexbox布局中flex项文本溢出设置显示省略号失效问题</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>flexbox 布局时 flex 项子元素中的文本溢出后想显示省略号(…)，结果设置 <code>text-overflow:ellipsis</code> 后没效果.</p>
@@ -254,32 +280,6 @@
       </categories>
   </entry>
   <entry>
-    <title>border与outline的区别</title>
-    <url>/2022/05/07/%E5%89%8D%E7%AB%AF/CSS/border%E4%B8%8Eoutline%E7%9A%84%E5%8C%BA%E5%88%AB/index/</url>
-    <content><![CDATA[<h3 id="border与outline的区别"><a href="#border与outline的区别" class="headerlink" title="border与outline的区别"></a>border与outline的区别</h3><ol>
-<li>outline不占空间,不会影响元素的尺寸和位置—border占空间,影响元素的尺寸和位置</li>
-<li>outline属性针对链接,表单控件等元素设计,而border则可以作用于几乎所有有形的html元素</li>
-</ol>
-<p><code>所以outline的效果将随图片的focus事件而出现,元素的blur事件而消失,这两种效果都是浏览器的默认行为,无需JavaScript配合CSS实现</code></p>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><ul>
-<li>以下是设置border的div的效果</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#box</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">600px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">230px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: black;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.item</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border</span>: <span class="number">3px</span> solid red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/05/07/%E5%89%8D%E7%AB%AF/CSS/border%E4%B8%8Eoutline%E7%9A%84%E5%8C%BA%E5%88%AB/index/content-1.png"></p>
-<ul>
-<li>以下是设置outline的div的效果</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-id">#box</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">600px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">230px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: black;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.item</span>&#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">outline</span>: <span class="number">3px</span> solid red;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/05/07/%E5%89%8D%E7%AB%AF/CSS/border%E4%B8%8Eoutline%E7%9A%84%E5%8C%BA%E5%88%AB/index/content-2.png"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>纯CSS实现高度与宽度成比例的效果</title>
     <url>/2019/08/05/%E5%89%8D%E7%AB%AF/CSS/%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0%E9%AB%98%E5%BA%A6%E4%B8%8E%E5%AE%BD%E5%BA%A6%E6%88%90%E6%AF%94%E4%BE%8B%E7%9A%84%E6%95%88%E6%9E%9C/index/</url>
     <content><![CDATA[<h2 id="纯CSS实现高度与宽度成比例的效果"><a href="#纯CSS实现高度与宽度成比例的效果" class="headerlink" title="纯CSS实现高度与宽度成比例的效果"></a>纯CSS实现高度与宽度成比例的效果</h2><p>先上图</p>
@@ -326,36 +326,6 @@
       <categories>
         <category>前端</category>
         <category>ECMAScript 6,7,8,9,10</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo常用命令</title>
-    <url>/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/</url>
-    <content><![CDATA[<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><p>首先使用命令行工具,进入hexo的最外层目录,你会看到如下文件.</p>
-<p>然后,再在命令行中输入下面所说的命令才会起作用</p>
-<p><img src="/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/p1.png"></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>用于在Hexo博客中新建文章,把命令中的—–文章标题—-这四个字换成你要创建的文章标题即可.</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>hexo clean    清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</li>
-<li>hexo generate    生成静态文件</li>
-<li>hexo server     启动服务器</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo deploy &amp;&amp; hexo backup</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>hexo deploy  把本地的hexo博客部署到已经配置好的服务器站点上</li>
-<li>hexo backup  把本地的hexo博客文件备份,上传到已经配置好的git站点上(前提是已经安装了Hexo 的<code>hexo-git-backup</code>插件)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Hexo</category>
       </categories>
   </entry>
   <entry>
@@ -483,6 +453,36 @@
       <categories>
         <category>前端</category>
         <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo常用命令</title>
+    <url>/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/</url>
+    <content><![CDATA[<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><p>首先使用命令行工具,进入hexo的最外层目录,你会看到如下文件.</p>
+<p>然后,再在命令行中输入下面所说的命令才会起作用</p>
+<p><img src="/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/p1.png"></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用于在Hexo博客中新建文章,把命令中的—–文章标题—-这四个字换成你要创建的文章标题即可.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>hexo clean    清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</li>
+<li>hexo generate    生成静态文件</li>
+<li>hexo server     启动服务器</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo deploy &amp;&amp; hexo backup</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>hexo deploy  把本地的hexo博客部署到已经配置好的服务器站点上</li>
+<li>hexo backup  把本地的hexo博客文件备份,上传到已经配置好的git站点上(前提是已经安装了Hexo 的<code>hexo-git-backup</code>插件)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Hexo</category>
       </categories>
   </entry>
   <entry>
