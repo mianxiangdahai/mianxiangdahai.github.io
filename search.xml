@@ -301,31 +301,33 @@
       </categories>
   </entry>
   <entry>
-    <title>ES7中的Async/Await</title>
-    <url>/2019/09/07/%E5%89%8D%E7%AB%AF/ECMAScript%206,7,8,9,10/ES7%E4%B8%AD%E7%9A%84Async-Await/index/</url>
-    <content><![CDATA[<h3 id="Async-和-Await"><a href="#Async-和-Await" class="headerlink" title="Async 和 Await"></a>Async 和 Await</h3><p>它们两个可以理解为两个特殊的函数标记.</p>
-<h4 id="Async"><a href="#Async" class="headerlink" title="Async"></a>Async</h4><p>异步,ES7当中新规定的语法规则,为了更加简化以往实现异步编程的复杂,冗余的代码,而出现的异步语法标记.它的出现,表示被它修饰的函数为异步函数,在执行的过程中,可以先执行这个函数之后的代码.</p>
-<h4 id="Await"><a href="#Await" class="headerlink" title="Await"></a>Await</h4><p>与 <code>Async</code> 搭配出现使用,表示 Async wait (异步等待),常用于 Async 定义的函数中,在执行的过程中,需要把Await标记的所有函数语句执行完成后,再继续执行Async中的其他语句,Async中的语句也执行完成以后,才执行Async 外边的其他语句</p>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>同步的代码风格</li>
-<li>被所有主流浏览器<code>原生</code>支持</li>
-</ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>具有一定的误导性</li>
-</ul>
-<p>被 Async 标记的函数中的 await 标记函数,会自上而下依次等待上一个await返回结果之后再执行下一个await , 因此,如果习惯了同步编程风格,把一堆不受彼此结果影响的await函数堆叠写在一起,会造成不必要的时间损耗</p>
-<ul>
-<li>一个异常会导致整个函数停止执行</li>
-</ul>
-<p><code>async</code>里如果有多个<code>await</code>函数的时候，如果其中任一一个抛出异常或者报错了，都会导致函数停止执行，直接<code>reject</code>;</p>
-<h4 id="搭配"><a href="#搭配" class="headerlink" title="搭配"></a>搭配</h4><p>为了避免一个异常会导致整个函数停止执行,Async 和 Await有时需要与try,catch联合使用</p>
-<h5 id="例子代码"><a href="#例子代码" class="headerlink" title="例子代码"></a>例子代码</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> nodoing;</span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">throwError</span>(<span class="params"></span>) &#123;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="keyword">await</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="string">&#x27;error&#x27;</span>);    </span><br><span class="line">       nodoing = <span class="keyword">await</span> <span class="string">&#x27;没有执行&#x27;</span>; </span><br><span class="line">    &#125;<span class="keyword">catch</span>(error)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;has Error stop&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">throwError</span>().<span class="title function_">then</span>(<span class="function"><span class="params">success</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;成功&#x27;</span>, nodoing))</span><br><span class="line">            .<span class="title function_">catch</span>(<span class="function"><span class="params">error</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;失败&#x27;</span>,nodoing))</span><br><span class="line"><span class="comment">// has Error stop</span></span><br><span class="line"><span class="comment">// 成功 undefined</span></span><br></pre></td></tr></table></figure>
+    <title>Hexo常用命令</title>
+    <url>/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/</url>
+    <content><![CDATA[<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><p>首先使用命令行工具,进入hexo的最外层目录,你会看到如下文件.</p>
+<p>然后,再在命令行中输入下面所说的命令才会起作用</p>
+<p><img src="/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/p1.png"></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>ES7</code> 的 <code>async/await</code> 特性对 <code>JS</code> 异步编程是个巨大的改进.它让代码可读性更好.更方便调试,但是想要正确的使用他们,你必须彻底了解 <code>promise</code>,因为它只是个语法糖，它依赖的技术仍然是 <code>promise</code>.</p>
+<ul>
+<li>用于在Hexo博客中新建文章,把命令中的—–文章标题—-这四个字换成你要创建的文章标题即可.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>hexo clean    清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</li>
+<li>hexo generate    生成静态文件</li>
+<li>hexo server     启动服务器</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo deploy &amp;&amp; hexo backup</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>hexo deploy  把本地的hexo博客部署到已经配置好的服务器站点上</li>
+<li>hexo backup  把本地的hexo博客文件备份,上传到已经配置好的git站点上(前提是已经安装了Hexo 的<code>hexo-git-backup</code>插件)</li>
+</ul>
 ]]></content>
       <categories>
         <category>前端</category>
-        <category>ECMAScript 6,7,8,9,10</category>
+        <category>Hexo</category>
       </categories>
   </entry>
   <entry>
@@ -436,6 +438,34 @@
       </categories>
   </entry>
   <entry>
+    <title>ES7中的Async/Await</title>
+    <url>/2019/09/07/%E5%89%8D%E7%AB%AF/ECMAScript%206,7,8,9,10/ES7%E4%B8%AD%E7%9A%84Async-Await/index/</url>
+    <content><![CDATA[<h3 id="Async-和-Await"><a href="#Async-和-Await" class="headerlink" title="Async 和 Await"></a>Async 和 Await</h3><p>它们两个可以理解为两个特殊的函数标记.</p>
+<h4 id="Async"><a href="#Async" class="headerlink" title="Async"></a>Async</h4><p>异步,ES7当中新规定的语法规则,为了更加简化以往实现异步编程的复杂,冗余的代码,而出现的异步语法标记.它的出现,表示被它修饰的函数为异步函数,在执行的过程中,可以先执行这个函数之后的代码.</p>
+<h4 id="Await"><a href="#Await" class="headerlink" title="Await"></a>Await</h4><p>与 <code>Async</code> 搭配出现使用,表示 Async wait (异步等待),常用于 Async 定义的函数中,在执行的过程中,需要把Await标记的所有函数语句执行完成后,再继续执行Async中的其他语句,Async中的语句也执行完成以后,才执行Async 外边的其他语句</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>同步的代码风格</li>
+<li>被所有主流浏览器<code>原生</code>支持</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>具有一定的误导性</li>
+</ul>
+<p>被 Async 标记的函数中的 await 标记函数,会自上而下依次等待上一个await返回结果之后再执行下一个await , 因此,如果习惯了同步编程风格,把一堆不受彼此结果影响的await函数堆叠写在一起,会造成不必要的时间损耗</p>
+<ul>
+<li>一个异常会导致整个函数停止执行</li>
+</ul>
+<p><code>async</code>里如果有多个<code>await</code>函数的时候，如果其中任一一个抛出异常或者报错了，都会导致函数停止执行，直接<code>reject</code>;</p>
+<h4 id="搭配"><a href="#搭配" class="headerlink" title="搭配"></a>搭配</h4><p>为了避免一个异常会导致整个函数停止执行,Async 和 Await有时需要与try,catch联合使用</p>
+<h5 id="例子代码"><a href="#例子代码" class="headerlink" title="例子代码"></a>例子代码</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> nodoing;</span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">throwError</span>(<span class="params"></span>) &#123;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="keyword">await</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="string">&#x27;error&#x27;</span>);    </span><br><span class="line">       nodoing = <span class="keyword">await</span> <span class="string">&#x27;没有执行&#x27;</span>; </span><br><span class="line">    &#125;<span class="keyword">catch</span>(error)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;has Error stop&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">throwError</span>().<span class="title function_">then</span>(<span class="function"><span class="params">success</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;成功&#x27;</span>, nodoing))</span><br><span class="line">            .<span class="title function_">catch</span>(<span class="function"><span class="params">error</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;失败&#x27;</span>,nodoing))</span><br><span class="line"><span class="comment">// has Error stop</span></span><br><span class="line"><span class="comment">// 成功 undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>ES7</code> 的 <code>async/await</code> 特性对 <code>JS</code> 异步编程是个巨大的改进.它让代码可读性更好.更方便调试,但是想要正确的使用他们,你必须彻底了解 <code>promise</code>,因为它只是个语法糖，它依赖的技术仍然是 <code>promise</code>.</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>ECMAScript 6,7,8,9,10</category>
+      </categories>
+  </entry>
+  <entry>
     <title>git回退版本并提交</title>
     <url>/2019/08/09/%E5%89%8D%E7%AB%AF/Git/git%E5%9B%9E%E9%80%80%E7%89%88%E6%9C%AC%E5%B9%B6%E6%8F%90%E4%BA%A4/index/</url>
     <content><![CDATA[<p>直接找到要回退的版本号（例如是：83qa2785），reset之后，强行推送到服务器端：</p>
@@ -453,51 +483,6 @@
       <categories>
         <category>前端</category>
         <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo常用命令</title>
-    <url>/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/</url>
-    <content><![CDATA[<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><p>首先使用命令行工具,进入hexo的最外层目录,你会看到如下文件.</p>
-<p>然后,再在命令行中输入下面所说的命令才会起作用</p>
-<p><img src="/2019/09/19/%E5%89%8D%E7%AB%AF/Hexo/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index/p1.png"></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>用于在Hexo博客中新建文章,把命令中的—–文章标题—-这四个字换成你要创建的文章标题即可.</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>hexo clean    清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</li>
-<li>hexo generate    生成静态文件</li>
-<li>hexo server     启动服务器</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo deploy &amp;&amp; hexo backup</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>hexo deploy  把本地的hexo博客部署到已经配置好的服务器站点上</li>
-<li>hexo backup  把本地的hexo博客文件备份,上传到已经配置好的git站点上(前提是已经安装了Hexo 的<code>hexo-git-backup</code>插件)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Vue项目真机调试</title>
-    <url>/2019/08/05/%E5%89%8D%E7%AB%AF/Vue/Vue%E9%A1%B9%E7%9B%AE%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/index/</url>
-    <content><![CDATA[<h2 id="Vue项目真机调试"><a href="#Vue项目真机调试" class="headerlink" title="Vue项目真机调试"></a>Vue项目真机调试</h2><p>在真机调试的过程中,发现输入本机ipv4地址,无法访问项目,</p>
-<p>解决方法:   在 package.json文件中的 “scripts”–&gt;”dev” 的对应数据值中加入 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- host 0.0.0.0</span><br></pre></td></tr></table></figure>
-
-<p>一般情况下,重启Vue项目就可以正常访问,但是,由于我的电脑特殊,经过上述改动以后,在电脑地址栏里面输入本机ipv4地址,可以访问项目,但是,手机上无论如何也不行,经过分析,觉得可能是无线路由器的ip隔离,或者是本机防火墙造成的.</p>
-<p>经查看,本机ip与手机ip,在同一网段,所以排除了上述第一种可能,然后,关闭电脑windows defender防火墙,重新启动项目,问题解决,手机上访问没问题了.</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
       </categories>
   </entry>
   <entry>
@@ -519,6 +504,38 @@
 
 <h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h3><p>返回一个指定字符串值最后出现的位置,在一个字符串中指定的位置从后向前查找</p>
 <h4 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a>例子</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;hello$hello$hello&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;$&#x27;</span>)); <span class="comment">// 11</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;$&#x27;</span>,<span class="number">10</span>)); <span class="comment">// 5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;hello&#x27;</span>,<span class="number">6</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Vue项目真机调试</title>
+    <url>/2019/08/05/%E5%89%8D%E7%AB%AF/Vue/Vue%E9%A1%B9%E7%9B%AE%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/index/</url>
+    <content><![CDATA[<h2 id="Vue项目真机调试"><a href="#Vue项目真机调试" class="headerlink" title="Vue项目真机调试"></a>Vue项目真机调试</h2><p>在真机调试的过程中,发现输入本机ipv4地址,无法访问项目,</p>
+<p>解决方法:   在 package.json文件中的 “scripts”–&gt;”dev” 的对应数据值中加入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- host 0.0.0.0</span><br></pre></td></tr></table></figure>
+
+<p>一般情况下,重启Vue项目就可以正常访问,但是,由于我的电脑特殊,经过上述改动以后,在电脑地址栏里面输入本机ipv4地址,可以访问项目,但是,手机上无论如何也不行,经过分析,觉得可能是无线路由器的ip隔离,或者是本机防火墙造成的.</p>
+<p>经查看,本机ip与手机ip,在同一网段,所以排除了上述第一种可能,然后,关闭电脑windows defender防火墙,重新启动项目,问题解决,手机上访问没问题了.</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JS对象常用方法</title>
+    <url>/2022/05/07/%E5%89%8D%E7%AB%AF/JavaScript/JS%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index/</url>
+    <content><![CDATA[<h3 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h3><p>返回一个索引元素为字符串的数组,其元素来自于给定<code>Object</code>中可枚举的属性,遍历顺序与手动遍历顺序一致</p>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="number">0</span>: <span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;c&#x27;</span> &#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(obj));   <span class="comment">// [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果索引为数字的话,按照从小到大的顺序返回数字索引</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> anObj = &#123; <span class="number">100</span>: <span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;b&#x27;</span>, <span class="number">7</span>: <span class="string">&#x27;c&#x27;</span> &#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(anObj));  <span class="comment">// [&quot;2&quot;, &quot;7&quot;, &quot;100&quot;]</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -595,23 +612,6 @@
 <h5 id="JSON-parse-不允许用逗号作为结尾"><a href="#JSON-parse-不允许用逗号作为结尾" class="headerlink" title="JSON.parse() 不允许用逗号作为结尾"></a><code>JSON.parse()</code> <strong>不允许用逗号作为结尾</strong></h5><h4 id="遍历json数据和json阵列"><a href="#遍历json数据和json阵列" class="headerlink" title="遍历json数据和json阵列"></a><strong>遍历json数据和json阵列</strong></h4><h5 id="遍历JSON数据-代码"><a href="#遍历JSON数据-代码" class="headerlink" title="遍历JSON数据,代码"></a>遍历JSON数据,代码</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> packJson = &#123; <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Liza&quot;</span> , <span class="string">&quot;password&quot;</span> : <span class="string">&quot;123&quot;</span> &#125; ;</span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> k <span class="keyword">in</span> packJson )&#123; <span class="comment">//遍历packJson数据的每个key/value对,k为key </span></span><br><span class="line">	<span class="title function_">alert</span>(k + <span class="string">&quot; &quot;</span> + packJson[k]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">name Liza</span></span><br><span class="line"><span class="comment">password 123</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="遍历JSON阵列-代码"><a href="#遍历JSON阵列-代码" class="headerlink" title="遍历JSON阵列,代码"></a>遍历JSON阵列,代码</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> packJson = [&#123; <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Liza&quot;</span> , <span class="string">&quot;password&quot;</span> : <span class="string">&quot;123&quot;</span> &#125;, &#123; <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Mike&quot;</span> , <span class="string">&quot;password&quot;</span> : <span class="string">&quot;456&quot;</span> &#125;];</span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i <span class="keyword">in</span> packJson)&#123;  <span class="comment">//遍历packJson阵列时，i为索引 </span></span><br><span class="line">	<span class="title function_">alert</span>(packJson[i].<span class="property">name</span> + <span class="string">&quot; &quot;</span> + packJson[i].<span class="property">password</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Liza 123</span></span><br><span class="line"><span class="comment">Mike 456</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JS对象常用方法</title>
-    <url>/2022/05/07/%E5%89%8D%E7%AB%AF/JavaScript/JS%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index/</url>
-    <content><![CDATA[<h3 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h3><p>返回一个索引元素为字符串的数组,其元素来自于给定<code>Object</code>中可枚举的属性,遍历顺序与手动遍历顺序一致</p>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="number">0</span>: <span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;c&#x27;</span> &#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(obj));   <span class="comment">// [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;]</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果索引为数字的话,按照从小到大的顺序返回数字索引</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> anObj = &#123; <span class="number">100</span>: <span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;b&#x27;</span>, <span class="number">7</span>: <span class="string">&#x27;c&#x27;</span> &#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(anObj));  <span class="comment">// [&quot;2&quot;, &quot;7&quot;, &quot;100&quot;]</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
